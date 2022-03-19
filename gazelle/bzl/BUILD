@@ -3,10 +3,15 @@ load("@bazel_gazelle//:def.bzl", "gazelle", "gazelle_binary")
 
 # gazelle:exclude testdata
 
+# keep
 go_library(
     name = "bzl",
-    srcs = ["gazelle.go"],
-    importpath = "github.com/bazelbuild/bazel-skylib/gazelle",
+    srcs = [
+        "gazelle.go",
+        "treesitter.go",
+    ],
+    embedsrcs = [":loads.scm"],
+    importpath = "github.com/bazelbuild/bazel-skylib/gazelle/bzl",
     visibility = ["//visibility:public"],
     deps = [
         "@bazel_gazelle//config:go_default_library",
@@ -17,6 +22,8 @@ go_library(
         "@bazel_gazelle//resolve:go_default_library",
         "@bazel_gazelle//rule:go_default_library",
         "@com_github_bazelbuild_buildtools//build:go_default_library",
+        "@com_github_smacker_go_tree_sitter//:go-tree-sitter",
+        "@com_github_smacker_go_tree_sitter//python",
     ],
 )
 

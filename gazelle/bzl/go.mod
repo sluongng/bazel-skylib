@@ -10,6 +10,7 @@ require (
 
 require (
 	github.com/google/go-cmp v0.5.6 // indirect
+	github.com/smacker/go-tree-sitter v0.0.0-20220314031503-79c376d254d3 // indirect
 	golang.org/x/sys v0.0.0-20211007075335-d3039528d8ac // indirect
 	golang.org/x/tools v0.1.7 // indirect
 )

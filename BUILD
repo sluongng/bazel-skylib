@@ -6,6 +6,7 @@ package(default_visibility = ["//visibility:public"])
 
 # buildifier: disable=skylark-comment
 # gazelle:exclude skylark_library.bzl
+# gazelle:prefix github.com/bazelbuild/bazel-skylib
 
 exports_files(["LICENSE"])
 

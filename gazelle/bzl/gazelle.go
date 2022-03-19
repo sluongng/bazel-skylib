@@ -240,7 +240,8 @@ func (*bzlLibraryLang) GenerateRules(args language.GenerateArgs) language.Genera
 		}
 
 		fullPath := filepath.Join(args.Dir, f)
-		loads, err := getBzlFileLoads(fullPath)
+		// loads, err := getBzlFileLoads(fullPath)
+		loads, err := getTreeSitterBzlFileLoads(fullPath)
 		if err != nil {
 			log.Printf("%s: contains syntax errors: %v", fullPath, err)
 			// Don't `continue` since it is reasonable to create a target even
